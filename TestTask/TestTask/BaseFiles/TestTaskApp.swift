@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TestTaskApp: App {
+    @State var networMonitor = NetworkMonitor()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(networMonitor)
         }
     }
 }
