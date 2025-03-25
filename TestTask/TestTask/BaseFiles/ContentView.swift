@@ -18,7 +18,7 @@ struct ContentView: View {
                     showNetworkAlert = !networkMonitor.execute()
                 }
             } else {
-                UsersEmptyView()
+                UsersTabView()
             }
         }
         .onChange(of: networkMonitor.hasNetworkConnection, { oldValue, newValue in

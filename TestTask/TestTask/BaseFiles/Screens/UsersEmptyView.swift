@@ -15,14 +15,16 @@ struct UsersEmptyView: View {
     struct VisualValues {
         static var imageName: String = "UserEmpty"
         static var vstackSpacing: CGFloat = 16.0
+        static var textFont: Font = FontNunito.regular.h1
+        static var foregroundColor: Color = ColorTask.black.base87
     }
     
     var body: some View {
         VStack(spacing: VisualValues.vstackSpacing) {
             Image(VisualValues.imageName)
             Text(Localizable.label)
-                .font(FontNunito.regular.h01())
-                .foregroundStyle(Color.styleBlack87)
+                .font(VisualValues.textFont)
+                .foregroundStyle(VisualValues.foregroundColor)
         }
     }
 }

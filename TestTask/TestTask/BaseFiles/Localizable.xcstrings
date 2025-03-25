@@ -10,7 +10,7 @@
             "value" : "Try again"
           }
         },
-        "es-419" : {
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Intente otra vez"
@@ -27,7 +27,7 @@
             "value" : "There is no internet connection"
           }
         },
-        "es-419" : {
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Se perdió la conexión de internet"
@@ -44,10 +44,78 @@
             "value" : "There are no users yet"
           }
         },
-        "es-419" : {
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aun no existen usuarios"
+          }
+        }
+      }
+    },
+    "userlist.title.label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Working with GET request"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajando con GET request"
+          }
+        }
+      }
+    },
+    "usersignup.title.label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Working with POST request"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajando con POST request"
+          }
+        }
+      }
+    },
+    "userstab.list.label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Users"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuarios"
+          }
+        }
+      }
+    },
+    "userstab.signup.label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign up"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrarse"
           }
         }
       }

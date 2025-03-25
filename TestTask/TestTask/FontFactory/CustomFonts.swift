@@ -29,9 +29,27 @@ enum CustomFontSize: CGFloat {
 }
 
 protocol CustomFontsProtocol {
-    var fontStyle: CustomFontStyle { get set }
-    func h01() -> Font
-    func b01() -> Font
-    func b02() -> Font
-    func b03() -> Font
+    var fontStyle: CustomFontStyle { get }
+    var h1: Font { get }
+    var b1: Font { get }
+    var b2: Font { get }
+    var b3: Font { get }
+}
+
+extension CustomFontsProtocol {
+    var h1: Font {
+        Font.custom(fontStyle.fontName, size: CustomFontSize.heading01.rawValue)
+    }
+    
+    var b1: Font {
+        Font.custom(fontStyle.fontName, size: CustomFontSize.body01.rawValue)
+    }
+    
+    var b2: Font {
+        Font.custom(fontStyle.fontName, size: CustomFontSize.body02.rawValue)
+    }
+    
+    var b3: Font {
+        Font.custom(fontStyle.fontName, size: CustomFontSize.body03.rawValue)
+    }
 }

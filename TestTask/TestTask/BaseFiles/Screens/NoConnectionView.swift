@@ -16,6 +16,8 @@ struct NoConnectionView: View {
     struct VisualValues {
         static var imageName: String = "NoConnection"
         static var vstackSpacing: CGFloat = 16.0
+        static var textFont: Font = FontNunito.regular.h1
+        static var foregroundColor: Color = ColorTask.black.base87
     }
     
     private let action: (() -> Void)
@@ -28,8 +30,8 @@ struct NoConnectionView: View {
         VStack(spacing: VisualValues.vstackSpacing) {
             Image(VisualValues.imageName)
             Text(Localizable.label)
-                .font(FontNunito.regular.h01())
-                .foregroundStyle(Color.styleBlack87)
+                .font(VisualValues.textFont)
+                .foregroundStyle(VisualValues.foregroundColor)
             TestTaskPrimaryButton(Localizable.button, action: {
                 action()
             })

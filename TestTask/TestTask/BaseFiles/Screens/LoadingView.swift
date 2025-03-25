@@ -10,12 +10,19 @@ import SwiftUI
 struct LoadingView: View {
     @State private var animationsRunning = false
     
+    struct VisualValues {
+        static var imageName: String = "slowmo"
+        static var foregroundColor: Color = ColorTask.secondary.base
+        static var frameSize: CGFloat = 115
+        static var maxFrameSize: CGFloat = .infinity
+    }
+    
     var body: some View {
         VStack {
-            Image(systemName: "slowmo")
+            Image(systemName: VisualValues.imageName)
                 .resizable()
-                .frame(width: 150, height: 150, alignment: .center)
-                .foregroundStyle(Color.styleSecondary)
+                .frame(width: VisualValues.frameSize, height: VisualValues.frameSize, alignment: .center)
+                .foregroundStyle(VisualValues.foregroundColor)
                 .symbolEffect(.variableColor.iterative, options: .repeat(.continuous), value: animationsRunning)
                 .onAppear {
                     withAnimation {
@@ -28,10 +35,14 @@ struct LoadingView: View {
                     }
                 }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: VisualValues.maxFrameSize, maxHeight: VisualValues.maxFrameSize)
         .background {
             Color.accentColor
                 .ignoresSafeArea()
         }
     }
+}
+
+#Preview {
+    LoadingView()
 }

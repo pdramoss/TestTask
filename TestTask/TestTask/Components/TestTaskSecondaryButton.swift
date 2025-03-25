@@ -23,7 +23,7 @@ struct TestTaskSecondaryButton: View {
         } label: {
             HStack {
                 Text(text.uppercased())
-                    .font(FontNunito.bold.b01())
+                    .font(VisualValues.textFont)
                     .padding(.horizontal)
                     
             }
@@ -32,27 +32,34 @@ struct TestTaskSecondaryButton: View {
         .buttonStyle(TestTaskSecondaryButtonStyle(isEnabled: isEnabled))
     }
     
+    private struct VisualValues {
+        static var textFont: Font = FontNunito.bold.b1
+        static var backgroundColor: Color = ColorTask.white.base
+        static var pressedColor: Color = ColorTask.secondary.light
+        static var foregroundColor: Color = ColorTask.secondary.base
+        static var disabledColor: Color = ColorTask.black.base48
+        static var cornerRadius: CGFloat = 45
+    }
+    
     private struct TestTaskSecondaryButtonStyle: ButtonStyle {
         let isEnabled: Bool
         
         @ViewBuilder
         func makeBody(configuration: Configuration) -> some View {
-            let backgroundColor = Color.styleWhite
-            let pressedColor = Color.styleSecondaryLight
-            let background = configuration.isPressed ? pressedColor : backgroundColor
-            let foregroundColor = isEnabled ? Color.styleSecondary : Color.styleBlack48
+            let background = configuration.isPressed ? VisualValues.pressedColor : VisualValues.backgroundColor
+            let foregroundColor = isEnabled ? VisualValues.foregroundColor : VisualValues.disabledColor
             
             configuration.label
                 .foregroundStyle(foregroundColor)
                 .background(background)
-                .cornerRadius(45)
+                .cornerRadius(VisualValues.cornerRadius)
         }
     }
 }
 
 #Preview {
-    TestTaskSecondaryButton("Example") {}
-    TestTaskSecondaryButton("Example") {}
+    TestTaskSecondaryButton("Enabled") {}
+    TestTaskSecondaryButton("Disabled") {}
         .disabled(true)
 }
 
